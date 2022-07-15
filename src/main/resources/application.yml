@@ -1,0 +1,78 @@
+#spring
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pricedb
+    username: postgres
+    password: Alonso
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: validate
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 500
+          batch_versioned_data: true
+        order_updates: true
+  h2:
+    console:
+      enabled: true
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  sql:
+    init:
+      mode: always
+  batch:
+    job:
+      enabled: true
+    jdbc:
+      initialize-schema: always
+  mail:
+    host: smtp.gmail.com
+    username: iryna19890909@gmail.com
+    password: phnofbmfgtuekhil
+    port: 587
+    protocol: smtp
+    properties:
+      "mail.transport.protocol": smtp
+      "mail.smtp.auth": true
+      "mail.smtp.starttls.enable": true
+
+#  mail:
+#    properties:
+#      mail:
+#        smtp:
+#          socketFactory:
+#            port: '465'
+#            class: javax.net.ssl.SSLSocketFactory
+#            fallback: 'false'
+#          starttls:
+#            enable: 'true'
+#          ssl:
+#            enable: 'false'
+#          auth: 'true'
+#    host: smtp.gmail.com
+#    username:
+#    protocol: smtp
+#    port: '465'
+#    password:
+#    defaultEncoding: UTF-8
+#  support:
+#    mail:
+#      address: etake@info.com
+
+#logging
+logging:
+  level:
+    org:
+      springframework: ERROR
+    com:
+      example:
+        demo: DEBUG
+  file:
+    name: app.log
